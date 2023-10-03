@@ -14,6 +14,8 @@
 		14A1CF622AC40DBF0065A713 /* CoreDataPrj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14A1CF602AC40DBF0065A713 /* CoreDataPrj.xcdatamodeld */; };
 		14A1CF642AC40DC10065A713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14A1CF632AC40DC10065A713 /* Assets.xcassets */; };
 		14A1CF672AC40DC10065A713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A1CF652AC40DC10065A713 /* LaunchScreen.storyboard */; };
+		14C91CAB2ACC0391009209A5 /* ToDoListItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C91CA92ACC0391009209A5 /* ToDoListItem+CoreDataClass.swift */; };
+		14C91CAC2ACC0391009209A5 /* ToDoListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C91CAA2ACC0391009209A5 /* ToDoListItem+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		14A1CF632AC40DC10065A713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14A1CF662AC40DC10065A713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14A1CF682AC40DC10065A713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14C91CA92ACC0391009209A5 /* ToDoListItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		14C91CAA2ACC0391009209A5 /* ToDoListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,42 @@
 		14A1CF562AC40DBF0065A713 /* CoreDataPrj */ = {
 			isa = PBXGroup;
 			children = (
-				14A1CF572AC40DBF0065A713 /* AppDelegate.swift */,
-				14A1CF592AC40DBF0065A713 /* SceneDelegate.swift */,
+				14C91CAF2ACC06B3009209A5 /* Resources */,
+				14C91CAE2ACC06AA009209A5 /* Application */,
+				14C91CAD2ACC039C009209A5 /* ToDoListItem */,
 				14A1CF5B2AC40DBF0065A713 /* ViewController.swift */,
 				14A1CF5D2AC40DBF0065A713 /* Main.storyboard */,
-				14A1CF632AC40DC10065A713 /* Assets.xcassets */,
-				14A1CF652AC40DC10065A713 /* LaunchScreen.storyboard */,
-				14A1CF682AC40DC10065A713 /* Info.plist */,
-				14A1CF602AC40DBF0065A713 /* CoreDataPrj.xcdatamodeld */,
 			);
 			path = CoreDataPrj;
+			sourceTree = "<group>";
+		};
+		14C91CAD2ACC039C009209A5 /* ToDoListItem */ = {
+			isa = PBXGroup;
+			children = (
+				14C91CA92ACC0391009209A5 /* ToDoListItem+CoreDataClass.swift */,
+				14C91CAA2ACC0391009209A5 /* ToDoListItem+CoreDataProperties.swift */,
+			);
+			path = ToDoListItem;
+			sourceTree = "<group>";
+		};
+		14C91CAE2ACC06AA009209A5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				14A1CF592AC40DBF0065A713 /* SceneDelegate.swift */,
+				14A1CF572AC40DBF0065A713 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		14C91CAF2ACC06B3009209A5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14A1CF602AC40DBF0065A713 /* CoreDataPrj.xcdatamodeld */,
+				14A1CF682AC40DC10065A713 /* Info.plist */,
+				14A1CF652AC40DC10065A713 /* LaunchScreen.storyboard */,
+				14A1CF632AC40DC10065A713 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +174,8 @@
 				14A1CF5C2AC40DBF0065A713 /* ViewController.swift in Sources */,
 				14A1CF582AC40DBF0065A713 /* AppDelegate.swift in Sources */,
 				14A1CF5A2AC40DBF0065A713 /* SceneDelegate.swift in Sources */,
+				14C91CAB2ACC0391009209A5 /* ToDoListItem+CoreDataClass.swift in Sources */,
+				14C91CAC2ACC0391009209A5 /* ToDoListItem+CoreDataProperties.swift in Sources */,
 				14A1CF622AC40DBF0065A713 /* CoreDataPrj.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoreDataPrj/Info.plist;
+				INFOPLIST_FILE = CoreDataPrj/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -324,7 +356,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoreDataPrj/Info.plist;
+				INFOPLIST_FILE = CoreDataPrj/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
