@@ -139,36 +139,32 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let item = models[indexPath.row]
         
-        let sheet = UIAlertController(title: "Edit",
-                                      message: nil,
-                                      preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Edit Item",
+                                      message: "Edit your item",
+                                      preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        alert.textFields?.first?.text = item.name
         
-        sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        sheet.addAction(UIAlertAction(title: "Edit", style: .default, handler: { _ in
-            //MARK: Edit
-            let alert = UIAlertController(title: "Edit Item",
-                                          message: "Edit your item",
-                                          preferredStyle: .alert)
-            alert.addTextField(configurationHandler: nil)
-            alert.textFields?.first?.text = item.name
+        alert.addAction(UIAlertAction(title: "Save", style: .cancel, handler: { [weak self] _ in
+            guard let field = alert.textFields?.first,
+                  let newName = field.text, !newName.isEmpty else {
+                return
+            }
             
-            alert.addAction(UIAlertAction(title: "Save", style: .cancel, handler: { [weak self] _ in
-                guard let field = alert.textFields?.first,
-                      let newName = field.text, !newName.isEmpty else {
-                    return
-                }
-                
-                self?.updateItem(item: item, newName: newName)
-            }))
-            
-            self.present(alert, animated: true)
-            //MARK: //Edit
+            self?.updateItem(item: item, newName: newName)
         }))
-        sheet.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
+        
+        self.present(alert, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let item = models[indexPath.row]
+        
+        let action = UIContextualAction(style: .destructive, title: "delete") {[weak self] action, view, completionHandler in
             self?.deleteItem(item: item)
-        }))
-        
-        present(sheet, animated: true)
+        }
+        return UISwipeActionsConfiguration(actions: [action])
     }
     
     
